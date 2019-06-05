@@ -1,6 +1,6 @@
 # GeocoderHereMaps
 
-An "extension" for [`geocoder`](https://github.com/alexreisner/geocoder) which adds support to use here maps [`Autocomplete`](https://developer.here.com/documentation/geocoder-autocomplete/topics/quick-start-get-suggestions.html) api with `geocoder`
+An "extension" for [`geocoder`](https://github.com/alexreisner/geocoder) which adds support for using additional HERE maps APIs.
 
 ## Installation
 
@@ -20,7 +20,24 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+Geocoding and reverse geocoding will work in the same way as provided by `geocoder` gem.
+
+To use autocomplete API
+
+```ruby
+Geocoder.search('Delhi', lookup: :here_suggest)
+```
+
+To use calculateroute API
+
+```ruby
+Geocoder.search([[26.1215649, -80.1273346], [34.8440896, -82.4057]],
+                lookup: :here_calculate_route,
+                params: { mode: 'fastest;truck', departure: "now", routeattributes: 'shape'}).first
+```
+
+
+If multiple lookups are used in application no need to define separate configuration for these new lookups in `geocoder.rb`. They will use the configuration defined for here maps.
 
 ## Development
 
