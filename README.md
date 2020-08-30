@@ -1,3 +1,8 @@
+# Deprecated
+
+This repository is no longer maintained, the gem will be maintained at https://github.com/cloudlogistics/geocoder_here_maps going forward. Releases will be done as usual.
+
+
 # GeocoderHereMaps
 
 An "extension" for [`geocoder`](https://github.com/alexreisner/geocoder) which adds support for using additional HERE maps APIs.
